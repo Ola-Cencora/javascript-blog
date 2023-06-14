@@ -41,7 +41,8 @@
   /* GENERATE TITLE LIST */
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
-    optTitleListSelector = '.titles';
+    optTitleListSelector = '.titles',
+    optArticleTagsSelector = '.post-tags .list';
 
   function generateTitleLinks(){
 
@@ -86,4 +87,51 @@
 
   generateTitleLinks();
 
+  /* [DONE] GENERATE TAGS FOR EVERY ARTICLE */
+  function generateTags(){
+
+    /* [DONE] find all articles */
+    const articles = document.querySelectorAll(optArticleSelector);
+
+    /* [DONE] START LOOP: for every article: */
+    for(let article of articles){
+
+      /* [DONE] find tags wrapper */
+      const tagsWrapper = article.querySelector(optArticleTagsSelector);
+      console.log('tags wrapper: ', tagsWrapper);
+
+      /* [DONE] make html variable with empty string */
+      let html = '';
+
+      /* [DONE] get tags from data-tags attribute */
+      const articleTags = article.getAttribute('data-tags');
+      console.log('tags: ', articleTags);
+
+      /* [DONE] split tags into array */
+      const articleTagsArray = articleTags.split(' ');
+      console.log('tags array: ', articleTagsArray);
+
+      /* [DONE] START LOOP: for each tag */
+      for(let tag of articleTagsArray){
+        console.log('tag: ', tag);
+
+        /* [DONE] generate HTML of the link */
+       const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>&nbsp;';
+       console.log('link: ', linkHTML);
+
+        /* [DONE] add generated code to html variable */
+        html = html + linkHTML;
+        console.log('html: ', html);
+
+      /* [DONE] END LOOP: for each tag */
+      }
+
+      /* [DONE] insert HTML of all the links into the tags wrapper */
+      tagsWrapper.innerHTML = html;
+
+    /* [DONE] END LOOP: for every article: */
+    }
+  }
+
+  generateTags();
 }
