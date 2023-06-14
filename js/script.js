@@ -25,7 +25,7 @@
     }
 
     /* [DONE] get 'href' attribute from the clicked link */
-    const articleSelector = clickedElement.getAttribute("href");
+    const articleSelector = clickedElement.getAttribute('href');
     console.log('href: ', articleSelector);
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
@@ -35,7 +35,7 @@
     /* [DONE] add class 'active' to the correct article */
     targetArticle.classList.add('active');
     console.log('targetArticle:', clickedElement);
-  }
+  };
 
 
   /* GENERATE TITLE LIST */
@@ -56,7 +56,7 @@
     for(let article of articles){
 
       /* [DONE] get the article id */
-      const articleID = article.getAttribute("id");
+      const articleID = article.getAttribute('id');
       console.log('article ID: ', articleID);
 
       /* [DONE] find the title element and get the title from the title element*/
@@ -78,11 +78,12 @@
 
     const links = document.querySelectorAll('.titles a');
     console.log('links: ',links);
-  
+
     for(let link of links){
       link.addEventListener('click', titleClickHandler);
     }
   }
 
   generateTitleLinks();
+
 }
