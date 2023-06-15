@@ -203,5 +203,46 @@
   }
 
   addClickListenersToTags();
+
+
+  const optArticleAuthorSelector = '.post-author';
+
+  /* GENERATE AUTHOR FOR EVERY ARTICLE */
+  function generateAuthors(){
+
+    /* [] find all articles */
+    const articles = document.querySelectorAll(optArticleSelector);
+
+    /* [] START LOOP: for every article: */
+    for(let article of articles){
+
+      /* [] find authors wrapper */
+      const authorWrapper = article.querySelector(optArticleAuthorSelector);
+      console.log('author wrapper: ', authorWrapper);
+
+      /* [] make html variable with empty string */
+      let html = '';
+
+      /* [] get authors from data-author attribute */
+      const articleAuthor = article.getAttribute('data-author');
+      console.log('author: ', articleAuthor);
+
+      /* [] generate HTML of the link */
+      const linkHTML = '<span>by </span><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
+      console.log('link: ', linkHTML);
+
+      /* [] add generated code to html variable */
+      html = html + linkHTML;
+      console.log('html: ', html);
+
+      /* [] insert HTML of all the links into the tags wrapper */
+      authorWrapper.innerHTML = html;
+
+    /* [] END LOOP: for every article: */
+    }
+  }
+
+    generateAuthors();
+
 }
 
