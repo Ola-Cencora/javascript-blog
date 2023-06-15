@@ -120,8 +120,8 @@
         console.log('tag: ', tag);
 
         /* [DONE] generate HTML of the link */
-       const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>&nbsp;';
-       console.log('link: ', linkHTML);
+        const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>&nbsp;';
+        console.log('link: ', linkHTML);
 
         /* [DONE] add generated code to html variable */
         html = html + linkHTML;
@@ -140,7 +140,7 @@
   generateTags();
 
   /* ADD ACTION AFTER CLICK ON TAG */
-    function tagClickHandler(event){
+  function tagClickHandler(event){
     console.log(event);
     console.log('Tag was clicked!');
 
@@ -243,7 +243,7 @@
     }
   }
 
-    generateAuthors();
+  generateAuthors();
 
 
   /* ADD ACTION AFTER CLICK ON AUTHOR */
