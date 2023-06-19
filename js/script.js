@@ -93,6 +93,19 @@
 
   const optTagsListSelector = '.tags.list';
 
+  function calculateTagsParams(tags){
+
+    const params = {max: 0, min: 99999};
+
+    for(let tag in tags){
+      console.log(tag + ' is used ' + tags[tag] + ' times ');
+
+      params.max = Math.max(tags[tag], params.max);
+      params.min = Math.min(tags[tag], params.min);
+    }
+
+    return params;
+  }
   /* GENERATE TAGS FOR EVERY ARTICLE */
   function generateTags(){
 
@@ -151,6 +164,10 @@
 
     /* [NEW] find list of tags in right column */
   const tagList = document.querySelector(optTagsListSelector);
+
+
+  const tagsParams = calculateTagsParams(allTags);
+  console.log('tagsParams:', tagsParams)
 
   /* [NEW] create variable for all links HTML code */
   let allTagsHTML = '';
