@@ -152,10 +152,23 @@
     /* [NEW] find list of tags in right column */
   const tagList = document.querySelector(optTagsListSelector);
 
-  /* [NEW] add html from allTags to tagList */
- // tagList.innerHTML = allTags.join(' ');
- console.log('allTags: ', allTags);
+  /* [NEW] create variable for all links HTML code */
+  let allTagsHTML = '';
+
+  /* [NEW] START LOOP: for each tag in allTags: */
+  for(let tag in allTags){
+
+    /* [NEW] generate code of a link and add it to allTagsHTML */
+   const linkHTML = '<a href="#tag-' + tag + '"><span>' + tag + '</span></a>';
+   console.log('link: ', linkHTML);
+   allTagsHTML += linkHTML + ' (' + allTags[tag] + ') ' ;
+
+  /* [NEW] END LOOP: for each tag in allTags: */
   }
+
+  /*[NEW] add HTML from allTagsHTML to tagList */
+  tagList.innerHTML = allTagsHTML;
+}
 
   generateTags();
 
@@ -210,8 +223,7 @@
 
   function addClickListenersToTags(){
     /* find all links to tags */
-    //const tagLinks = document.querySelectorAll('.post-tags .list a');
-    const tagLinks = document.querySelectorAll('.post-tags a[href^="#tag-"]');
+    const tagLinks = document.querySelectorAll('.post-tags a[href^="#tag-"], .tags a[href^="#tag-"] ');
 
     /* START LOOP: for each link */
     for(let tagLink of tagLinks){
