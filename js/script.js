@@ -55,7 +55,6 @@
 
   /* GENERATE TITLE LIST */
 
-  //function generateTitleLinks(customSelector = ''){
   const generateTitleLinks = function(customSelector = ''){
     console.log('custom selector: ', customSelector);
 
@@ -128,7 +127,6 @@
 
 
   /* GENERATE TAGS FOR EVERY ARTICLE */
-  //function generateTags(){
   const generateTags = function(){
 
     /* [NEW] create a new variable allTags with an empty object */
@@ -212,7 +210,6 @@
   generateTags();
 
   /* ADD ACTION AFTER CLICK ON TAG */
-  //function tagClickHandler(event){
   const tagClickHandler = function(event){
     console.log(event);
     console.log('Tag was clicked!');
@@ -261,7 +258,6 @@
     generateTitleLinks('[data-tags~="' + tag + '"]');
   };
 
-  //function addClickListenersToTags(){
   const addClickListenersToTags = function(){
 
     /* find all links to tags */
@@ -296,7 +292,6 @@
   };
 
   /* GENERATE AUTHOR FOR EVERY ARTICLE */
-  //function generateAuthors(){
   const generateAuthors = function (){
 
     /* [NEW] create a new variable allAuthors with an empty object */
@@ -370,7 +365,6 @@
 
 
   /* ADD ACTION AFTER CLICK ON AUTHOR */
-  //function authorClickHandler(event){
   const authorClickHandler = function(event){
     console.log(event);
     console.log('Author was clicked!');
@@ -420,7 +414,6 @@
     generateTitleLinks('[data-author="' + author + '"]');
   };
 
-  //function addClickListenersToAuthors(){
   const addClickListenersToAuthors = function(){
 
     /* find all links to author */
