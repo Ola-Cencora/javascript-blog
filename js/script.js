@@ -55,7 +55,8 @@
 
   /* GENERATE TITLE LIST */
 
-  function generateTitleLinks(customSelector = ''){
+  //function generateTitleLinks(customSelector = ''){
+  const generateTitleLinks = function(customSelector = ''){
     console.log('custom selector: ', customSelector);
 
     /* [DONE] remove contents of titleList */
@@ -96,7 +97,7 @@
     for(let link of links){
       link.addEventListener('click', titleClickHandler);
     }
-  }
+  };
 
   generateTitleLinks();
 
@@ -127,7 +128,8 @@
 
 
   /* GENERATE TAGS FOR EVERY ARTICLE */
-  function generateTags(){
+  //function generateTags(){
+  const generateTags = function(){
 
     /* [NEW] create a new variable allTags with an empty object */
     let allTags = {};
@@ -205,12 +207,13 @@
 
     /*[NEW] add HTML from allTagsHTML to tagList */
     tagList.innerHTML = allTagsHTML;
-  }
+  };
 
   generateTags();
 
   /* ADD ACTION AFTER CLICK ON TAG */
-  function tagClickHandler(event){
+  //function tagClickHandler(event){
+  const tagClickHandler = function(event){
     console.log(event);
     console.log('Tag was clicked!');
 
@@ -256,9 +259,11 @@
 
     /* execute function "generateTitleLinks" with article selector as argument */
     generateTitleLinks('[data-tags~="' + tag + '"]');
-  }
+  };
 
-  function addClickListenersToTags(){
+  //function addClickListenersToTags(){
+  const addClickListenersToTags = function(){
+
     /* find all links to tags */
     const tagLinks = document.querySelectorAll('.post-tags a[href^="#tag-"], .tags a[href^="#tag-"] ');
 
@@ -270,7 +275,7 @@
 
     /* END LOOP: for each link */
     }
-  }
+  };
 
   addClickListenersToTags();
 
@@ -291,7 +296,8 @@
   };
 
   /* GENERATE AUTHOR FOR EVERY ARTICLE */
-  function generateAuthors(){
+  //function generateAuthors(){
+  const generateAuthors = function (){
 
     /* [NEW] create a new variable allAuthors with an empty object */
     let allAuthors = {};
@@ -358,13 +364,14 @@
 
     /*[NEW] add HTML from allAuthorsHTML to authorsList */
     authorsList.innerHTML = allAuthorsHTML;
-  }
+  };
 
   generateAuthors();
 
 
   /* ADD ACTION AFTER CLICK ON AUTHOR */
-  function authorClickHandler(event){
+  //function authorClickHandler(event){
+  const authorClickHandler = function(event){
     console.log(event);
     console.log('Author was clicked!');
 
@@ -411,9 +418,10 @@
 
     /* execute function "generateTitleLinks" with article selector as argument */
     generateTitleLinks('[data-author="' + author + '"]');
-  }
+  };
 
-  function addClickListenersToAuthors(){
+  //function addClickListenersToAuthors(){
+  const addClickListenersToAuthors = function(){
 
     /* find all links to author */
     const authorLinks = document.querySelectorAll('.post-author a[href^="#author-"], .authors a[href^="#author-"] ');
@@ -426,7 +434,7 @@
 
     /* END LOOP: for each link */
     }
-  }
+  };
 
   addClickListenersToAuthors();
 
